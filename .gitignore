@@ -5,3 +5,10 @@
 # python
 __pycache__
 .venv
+
+# streamlit
+.streamlit
+
+# database
+*.csv
+*.gz
