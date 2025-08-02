@@ -36,6 +36,8 @@ def deduplicate_rows(objs, max: int = None) -> list:
     result=[]
     for obj in ast.literal_eval(objs):
         result.append(obj["name"].replace(" ", "").lower())
+        if "character" in obj.keys():
+            result.append(obj["character"].replace(" ", "").lower())
     return list(set(result))[:max] if max else list(set(result))
 
 def save_processed(df, path="data/processed_tmdb.pkl"):
